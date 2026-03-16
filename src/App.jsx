@@ -1,45 +1,23 @@
-import { useEffect } from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import SocialProof from './components/SocialProof'
-import Features from './components/Features'
-import Testimonials from './components/Testimonials'
-import BottomCTA from './components/BottomCTA'
-import FAQ from './components/FAQ'
-import ContactForm from './components/ContactForm'
-import Footer from './components/Footer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import RootLayout from './layouts/RootLayout'
+import HomePage from './pages/HomePage'
+import ServicesPage from './pages/ServicesPage'
+import ServiceDetailPage from './pages/ServiceDetailPage'
+import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
 
-function App() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible')
-          }
-        })
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-    )
-
-    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el))
-
-    return () => observer.disconnect()
-  }, [])
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <Hero />
-      <SocialProof />
-      <Features />
-      <Testimonials />
-      <BottomCTA />
-      <FAQ />
-      <ContactForm />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<RootLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="services" element={<ServicesPage />} />
+          <Route path="services/:serviceId" element={<ServiceDetailPage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="contact" element={<ContactPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
-
-export default App
