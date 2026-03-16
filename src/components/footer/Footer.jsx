@@ -29,17 +29,6 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <Link to="/" className="inline-flex items-center gap-2.5 group mb-4">
-              <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
-                <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="3" />
-                  <path d="M2 12C2 12 5 5 12 5s10 7 10 7-3 7-10 7S2 12 2 12z" />
-                </svg>
-              </div>
-              <span className="text-base font-bold text-white">
-                Weston<span className="text-purple-400">Opticians</span>
-              </span>
-            </Link>
             <p className="text-sm text-zinc-500 leading-relaxed mb-6">
               Your trusted high street opticians. Expert eye care, designer frames, and friendly service — helping the community see clearly since 2009.
             </p>

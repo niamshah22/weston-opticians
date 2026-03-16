@@ -33,19 +33,11 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-18">
+        <div className="flex items-center justify-between h-28 md:h-44">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center shadow-sm group-hover:bg-purple-700 transition-colors">
-              <svg className="w-4.5 h-4.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="3" />
-                <path d="M2 12C2 12 5 5 12 5s10 7 10 7-3 7-10 7S2 12 2 12z" />
-              </svg>
-            </div>
-            <span className="text-base font-bold text-zinc-900 tracking-tight">
-              Weston<span className="text-purple-600">Opticians</span>
-            </span>
+          <Link to="/" className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
+            <img src="/logo.png" alt="Weston Opticians" className="h-24 md:h-36" />
           </Link>
 
           {/* Desktop nav */}
